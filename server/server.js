@@ -41,7 +41,6 @@ app.post("/students", async (req, res) => {
   res.json(student);
 });
 
-
 app.put("/students/:id", async (req, res) => {
   const student = await Student.findByIdAndUpdate(
     req.params.id,
@@ -52,14 +51,12 @@ app.put("/students/:id", async (req, res) => {
     },
     { new: true }
   );
-
   res.json(student);
 });
 
 app.delete("/students/:id", async (req, res) => {
   await Student.findByIdAndDelete(req.params.id);
-
-  res.json({ message: "Student deleted" });
+  res.json({ message: "Student Deleted" });
 });
 
 app.listen(5000, () =>{

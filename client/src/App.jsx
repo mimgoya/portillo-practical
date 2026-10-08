@@ -61,17 +61,18 @@ function App(){
         setCourse(student.course);
         setAge(student.age);
 };
-
-const deleteStudent = (id) => {
-  axios
-    .delete(`http://localhost:5000/students/${id}`)
-    .then(() => {
-      setStudents((currentStudents) =>
-        currentStudents.filter((student) => student._id !== id)
-      );
-    });
-};
-
+ 
+// DELETE
+const deleteStudent  =  (id) => {
+   axios 
+     .delete(`http://localhost:5000/students/${id}`)
+     .then(() => {
+    setStudents((currentStudents) =>
+      currentStudents.filter((student) => student._id !== id)
+       );
+     });
+}; 
+ 
   return(
     <div>
 
@@ -106,9 +107,6 @@ const deleteStudent = (id) => {
 
       </form>
        
-
-      
-
       <h2>Students</h2>
 
       {students.map((student) => (
@@ -119,10 +117,11 @@ const deleteStudent = (id) => {
 
       
       <button onClick={() => editStudent(student)}>Edit</button>
-      <button onClick={() => deleteStudent(student._id)}>Delete</button>
 
+       <button onClick={() => deleteStudent(student._id)}>Delete</button>
+
+     
           </div>
-
       ))}
     
     </div>

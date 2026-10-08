@@ -78,7 +78,7 @@ const deleteStudent  =  (id) => {
 
       <h1>Student Management System</h1>
 
-      <form>
+      <form onSubmit={addStudent}>
         
       
       <input
@@ -104,9 +104,8 @@ const deleteStudent  =  (id) => {
       onChange={(e) => setAge(e.target.value)}
       />
 
-    <button onClick={addStudent}>
-      {editId ? "Update Student" : "Add Student"}
-    </button>
+    <button type="submit">{editId ? "Update Student" : "Add Student"}</button>
+
 
     
 

@@ -12,7 +12,7 @@ function App(){
   
   
   useEffect(() =>{
-    axios.get("https://vercel.com/mimgoya/portillo-practical-new/students")
+    axios.get("/students")
         .then((response) =>{
           setStudents(response.data);
         });
@@ -21,7 +21,7 @@ function App(){
   // CREATE 
  const addStudent = () => {
   if (editId !== null) {
-   axios.put(`https://vercel.com/mimgoya/portillo-practical-new/students/${editId}`, {
+   axios.put(`/students/${editId}`, {
       name,
       course,
       age
@@ -36,7 +36,7 @@ function App(){
         setAge("");
       });
   } else {
-   axios.post("https://vercel.com/mimgoya/portillo-practical-new/students", {
+   axios.post("/students", {
         name,
         course,
         age
@@ -65,7 +65,7 @@ function App(){
  
 // DELETE
 const deleteStudent  =  (id) => {
-  axios.delete(`https://vercel.com/mimgoya/portillo-practical-new/students/${id}`)
+  axios.delete(`/students/${id}`)
      .then(() => {
     setStudents((currentStudents) =>
       currentStudents.filter((student) => student._id !== id)

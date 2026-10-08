@@ -83,6 +83,7 @@ const deleteStudent  =  (id) => {
 
       <form>
         
+      <label> Name:</label>
       <input
       type="text"
       placeholder="Name"
@@ -90,14 +91,16 @@ const deleteStudent  =  (id) => {
       onChange={(e) => setName(e.target.value)}
       />
 
-       <input
+      <label> Course:</label>
+      <input
       type="text"
       placeholder="Course"
       value={course}
       onChange={(e) => setCourse(e.target.value)}
       />
 
-       <input
+      <label> Age:</label>
+      <input
       type="text"
       placeholder="Age"
       value={age}

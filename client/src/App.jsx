@@ -19,7 +19,7 @@ function App(){
   }, []);
 
   // CREATE 
- const addStudent = () => {
+ const addStudent = (e) => {
     e.preventDefault();
   if (editId !== null) {
    axios.put(`/students/${editId}`, {

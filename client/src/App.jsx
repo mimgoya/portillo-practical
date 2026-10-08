@@ -117,8 +117,7 @@ const deleteStudent  =  (id) => {
 
       
       <button onClick={() => editStudent(student)}>Edit</button>
-
-       <button onClick={() => deleteStudent(student._id)}>Delete</button>
+      <button onClick={() => deleteStudent(student._id)}>Delete</button>
 
      
           </div>

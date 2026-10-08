@@ -54,15 +54,13 @@ function App(){
       });}
 };
 
-
-    const editStudent = (student) => {
-  setEditId(student._id);
-  setName(student.name);
-  setCourse(student.course);
-  setAge(student.age);
+      // EDIT
+      const editStudent = (student) => {
+        setEditId(student._id);
+        setName(student.name);
+        setCourse(student.course);
+        setAge(student.age);
 };
-
-
 
 const deleteStudent = (id) => {
   axios
@@ -112,20 +110,16 @@ const deleteStudent = (id) => {
         <p>Course: {student.course}</p>
         <p>Age: {student.age}</p>
 
-      <button onClick={() => editStudent(student)}>
-          Edit
-          </button>
-
-      <button onClick={() => deleteStudent(student._id)}>
-            Delete
-          </button>
+      
+      <button onClick={() => editStudent(student)}>Edit</button>
+      <button onClick={() => deleteStudent(student._id)}>Delete</button>
 
           </div>
 
       ))}
     
     </div>
-    
+
   )
 }
 

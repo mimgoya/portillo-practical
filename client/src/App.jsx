@@ -12,7 +12,7 @@ function App(){
   
   useEffect(() =>{
     axios
-        .get("http://localhost:5000/students")
+        .get("portillo-practical-new.vercel.app")
         .then((response) =>{
           setStudents(response.data);
         });
@@ -22,7 +22,7 @@ function App(){
  const addStudent = () => {
   if (editId !== null) {
     axios
-    .put(`http://localhost:5000/students/${editId}`, {
+    .put(`https://portillo-practical-new.vercel.app/students/${editId}`, {
       name,
       course,
       age
@@ -38,7 +38,7 @@ function App(){
       });
   } else {
     axios
-      .post("http://localhost:5000/students", {
+      .post("https://portillo-practical-new.vercel.app/students", {
         name,
         course,
         age
@@ -68,7 +68,7 @@ function App(){
 // DELETE
 const deleteStudent  =  (id) => {
    axios 
-     .delete(`http://localhost:5000/students/${id}`)
+     .delete(`https://portillo-practical-new.vercel.app/students/${id}`)
      .then(() => {
     setStudents((currentStudents) =>
       currentStudents.filter((student) => student._id !== id)

@@ -30,9 +30,7 @@ function App(){
       .then((response) => {
         setStudents((currentStudents) =>
           currentStudents.map((student) =>
-            student._id === editId ? response.data : student
-          )
-        );
+            student._id === editId ? response.data : student));
         setEditId(null);
         setName("");
         setCourse("");
@@ -50,13 +48,12 @@ function App(){
           ...currentStudents,
           response.data
         ]);
-
         setName("");
         setCourse("");
         setAge("");
-      });
-  }
+      });}
 };
+
 
     const editStudent = (student) => {
   setEditId(student._id);
@@ -64,6 +61,8 @@ function App(){
   setCourse(student.course);
   setAge(student.age);
 };
+
+
 
 const deleteStudent = (id) => {
   axios
@@ -75,9 +74,9 @@ const deleteStudent = (id) => {
     });
 };
 
-
   return(
     <div>
+
       <h1>Student Management System</h1>
 
       <input
@@ -122,9 +121,11 @@ const deleteStudent = (id) => {
           </button>
 
           </div>
+
       ))}
-      
+    
     </div>
+    
   )
 }
 

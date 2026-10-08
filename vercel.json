@@ -12,9 +12,21 @@
   },
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/students",
       "destination": {
         "service": "server"
+      }
+    },
+    {
+      "source": "/students/(.*)",
+      "destination": {
+        "service": "server"
+      }
+    },
+    {
+      "source": "/",
+      "destination": {
+        "service": "client"
       }
     },
     {

@@ -11,6 +11,30 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+let connPromise = null;
+
+function connectDB() {
+  if (!connPromise) {
+    connPromise = mongoose.connect(process.env.MONGO_URI, {
+      serverSelectionTimeoutMS: 8000,
+    }).catch((err) => {
+      connPromise = null; // allow retry on next request
+      throw err;
+    });
+  }
+  return connPromise;
+}
+
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    console.log("MongoDB connection error", error);
+    res.status(500).json({ error: "Database connection failed" });
+  }
+});
+
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
     console.log("Connected to MONGODB");

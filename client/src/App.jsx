@@ -74,64 +74,58 @@ const deleteStudent  =  (id) => {
      });
 }; 
  
-  return(
-    <div>
+return (
+  <div className="container">
+    <h1>Student Management System</h1>
 
-      <h1>Student Management System</h1>
-
-      <form onSubmit={addStudent}>
-        
-      
+    <form className="form" onSubmit={addStudent}>
       <input
-      type="text"
-      placeholder="Name"
-      value={name}
-      onChange={(e) => setName(e.target.value)}
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
-
-      
       <input
-      type="text"
-      placeholder="Course"
-      value={course}
-      onChange={(e) => setCourse(e.target.value)}
+        type="text"
+        placeholder="Course"
+        value={course}
+        onChange={(e) => setCourse(e.target.value)}
       />
-
-      
       <input
-      type="text"
-      placeholder="Age"
-      value={age}
-      onChange={(e) => setAge(e.target.value)}
+        type="text"
+        placeholder="Age"
+        value={age}
+        onChange={(e) => setAge(e.target.value)}
       />
+      <button type="submit" className="btn primary">
+        {editId ? "Update Student" : "Add Student"}
+      </button>
+    </form>
 
-    <button type="submit">{editId ? "Update Student" : "Add Student"}</button>
+    <h2>Students</h2>
 
-
-    
-
-      </form>
-      
-       
-      <h2>Students</h2>
-
+    <div className="list">
       {students.map((student) => (
-        <div key={student._id}>
-        <p>Name: {student.name}</p>
-        <p>Course: {student.course}</p>
-        <p>Age: {student.age}</p>
-
-      
-      <button onClick={() => editStudent(student)}>Edit</button>
-      
-      <button onClick={() => deleteStudent(student._id)}>Delete</button>
-
-      </div>
+        <div key={student._id} className="card">
+          <div className="info">
+            <p><strong>Name:</strong> {student.name}</p>
+            <p><strong>Course:</strong> {student.course}</p>
+            <p><strong>Age:</strong> {student.age}</p>
+          </div>
+          <div className="actions">
+            <button className="btn" onClick={() => editStudent(student)}>
+              Edit
+            </button>
+            <button className="btn danger" onClick={() => deleteStudent(student._id)}>
+              Delete
+            </button>
+          </div>
+        </div>
       ))}
-    
     </div>
+  </div>
+)
 
-  )
 }
 
 export default App;

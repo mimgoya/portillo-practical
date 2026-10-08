@@ -54,13 +54,16 @@ function App(){
       });}
 };
 
-      // EDIT
-      const editStudent = (student) => {
-        setEditId(student._id);
-        setName(student.name);
-        setCourse(student.course);
-        setAge(student.age);
+
+
+      // EDIT 
+       const editStudent = (student) => {
+      setEditId(student._id);
+      setName(student.name);
+      setCourse(student.course);
+      setAge(student.age);
 };
+
  
 // DELETE
 const deleteStudent  =  (id) => {

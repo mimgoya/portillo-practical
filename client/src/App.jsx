@@ -26,7 +26,7 @@ function App(){
       name,
       course,
       age
-    })
+    })  
       .then((response) => {
         setStudents((currentStudents) =>
           currentStudents.map((student) =>

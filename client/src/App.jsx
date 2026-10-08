@@ -33,7 +33,6 @@ function App(){
             student._id === editId ? response.data : student
           )
         );
-
         setEditId(null);
         setName("");
         setCourse("");

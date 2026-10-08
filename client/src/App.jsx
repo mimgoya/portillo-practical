@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+
 function App(){
 
   const [students,setStudents] = useState([]);
@@ -11,7 +12,7 @@ function App(){
   
   
   useEffect(() =>{
-    axios.get("/students")
+    axios.get("https://vercel.com/mimgoya/portillo-practical-new/students")
         .then((response) =>{
           setStudents(response.data);
         });
@@ -20,7 +21,7 @@ function App(){
   // CREATE 
  const addStudent = () => {
   if (editId !== null) {
-   axios.put(`/students/${editId}`, {
+   axios.put(`https://vercel.com/mimgoya/portillo-practical-new/students/${editId}`, {
       name,
       course,
       age
@@ -35,7 +36,7 @@ function App(){
         setAge("");
       });
   } else {
-   axios.post("/students", {
+   axios.post("https://vercel.com/mimgoya/portillo-practical-new/students", {
         name,
         course,
         age
@@ -64,7 +65,7 @@ function App(){
  
 // DELETE
 const deleteStudent  =  (id) => {
-  axios.delete(`/students/${id}`)
+  axios.delete(`https://vercel.com/mimgoya/portillo-practical-new/students/${id}`)
      .then(() => {
     setStudents((currentStudents) =>
       currentStudents.filter((student) => student._id !== id)

@@ -22,7 +22,7 @@ function App(){
  const addStudent = () => {
   if (editId !== null) {
     axios
-    .put(`https://portillo-practical-new.vercel.app/students/${editId}`, {
+    .put(`https://portillo-practical-new.vercel.app/${editId}`, {
       name,
       course,
       age
@@ -38,7 +38,7 @@ function App(){
       });
   } else {
     axios
-      .post("https://portillo-practical-new.vercel.app/students", {
+      .post("https://portillo-practical-new.vercel.app/", {
         name,
         course,
         age
@@ -68,7 +68,7 @@ function App(){
 // DELETE
 const deleteStudent  =  (id) => {
    axios 
-     .delete(`https://portillo-practical-new.vercel.app/students/${id}`)
+     .delete(`https://portillo-practical-new.vercel.app/${id}`)
      .then(() => {
     setStudents((currentStudents) =>
       currentStudents.filter((student) => student._id !== id)
@@ -111,7 +111,10 @@ const deleteStudent  =  (id) => {
       {editId ? "Update Student" : "Add Student"}
     </button>
 
+    
+
       </form>
+      
        
       <h2>Students</h2>
 

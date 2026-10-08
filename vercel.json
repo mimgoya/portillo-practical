@@ -5,13 +5,9 @@
       "root": "client",
       "framework": "vite"
     },
-    "portillo-practical": {
-      "root": "portillo-practical",
-      "framework": "vite"
-    },
     "server": {
       "root": "server",
-      "framework": "express"
+      "entrypoint": "server.js"
     }
   },
   "rewrites": [
